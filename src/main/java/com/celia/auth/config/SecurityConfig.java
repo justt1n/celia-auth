@@ -30,7 +30,6 @@ import java.util.List;
 public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;
-    private final AuthenticationEntryPoint unauthorizedHandler;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -62,7 +61,7 @@ public class SecurityConfig {
 
                 // Configure exception handling
                 .exceptionHandling(exceptions -> exceptions
-                        .authenticationEntryPoint(unauthorizedHandler)
+                        .authenticationEntryPoint(authenticationEntryPoint())
                 );
 
         return http.build();
