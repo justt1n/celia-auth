@@ -1,0 +1,5 @@
+package com.celia.auth.model;
+
+public enum RoleName {
+    ROLE_USER, ROLE_ADMIN
+}
